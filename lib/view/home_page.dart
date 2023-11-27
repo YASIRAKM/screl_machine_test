@@ -26,7 +26,7 @@ class HomePage extends StatelessWidget {
             },
             child: const Icon(Icons.add)),
         appBar: AppBar(
-          title: const Text('User List'),
+          title: const Text('USER LIST'),
         ),
         body: ListView(
           children: [
