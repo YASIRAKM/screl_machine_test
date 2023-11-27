@@ -20,9 +20,13 @@ UserModel _$UserModelFromJson(Map<String, dynamic> json) {
 
 /// @nodoc
 mixin _$UserModel {
+  @HiveField(0)
   String get id => throw _privateConstructorUsedError;
+  @HiveField(1)
   String get name => throw _privateConstructorUsedError;
+  @HiveField(2)
   String get email => throw _privateConstructorUsedError;
+  @HiveField(3)
   DateTime get createdAt => throw _privateConstructorUsedError;
 
   Map<String, dynamic> toJson() => throw _privateConstructorUsedError;
@@ -36,7 +40,11 @@ abstract class $UserModelCopyWith<$Res> {
   factory $UserModelCopyWith(UserModel value, $Res Function(UserModel) then) =
       _$UserModelCopyWithImpl<$Res, UserModel>;
   @useResult
-  $Res call({String id, String name, String email, DateTime createdAt});
+  $Res call(
+      {@HiveField(0) String id,
+      @HiveField(1) String name,
+      @HiveField(2) String email,
+      @HiveField(3) DateTime createdAt});
 }
 
 /// @nodoc
@@ -86,7 +94,11 @@ abstract class _$$UserModelImplCopyWith<$Res>
       __$$UserModelImplCopyWithImpl<$Res>;
   @override
   @useResult
-  $Res call({String id, String name, String email, DateTime createdAt});
+  $Res call(
+      {@HiveField(0) String id,
+      @HiveField(1) String name,
+      @HiveField(2) String email,
+      @HiveField(3) DateTime createdAt});
 }
 
 /// @nodoc
@@ -128,24 +140,27 @@ class __$$UserModelImplCopyWithImpl<$Res>
 
 /// @nodoc
 @JsonSerializable()
-@HiveField(0)
 class _$UserModelImpl implements _UserModel {
   const _$UserModelImpl(
-      {required this.id,
-      required this.name,
-      required this.email,
-      required this.createdAt});
+      {@HiveField(0) required this.id,
+      @HiveField(1) required this.name,
+      @HiveField(2) required this.email,
+      @HiveField(3) required this.createdAt});
 
   factory _$UserModelImpl.fromJson(Map<String, dynamic> json) =>
       _$$UserModelImplFromJson(json);
 
   @override
+  @HiveField(0)
   final String id;
   @override
+  @HiveField(1)
   final String name;
   @override
+  @HiveField(2)
   final String email;
   @override
+  @HiveField(3)
   final DateTime createdAt;
 
   @override
@@ -185,21 +200,25 @@ class _$UserModelImpl implements _UserModel {
 
 abstract class _UserModel implements UserModel {
   const factory _UserModel(
-      {required final String id,
-      required final String name,
-      required final String email,
-      required final DateTime createdAt}) = _$UserModelImpl;
+      {@HiveField(0) required final String id,
+      @HiveField(1) required final String name,
+      @HiveField(2) required final String email,
+      @HiveField(3) required final DateTime createdAt}) = _$UserModelImpl;
 
   factory _UserModel.fromJson(Map<String, dynamic> json) =
       _$UserModelImpl.fromJson;
 
   @override
+  @HiveField(0)
   String get id;
   @override
+  @HiveField(1)
   String get name;
   @override
+  @HiveField(2)
   String get email;
   @override
+  @HiveField(3)
   DateTime get createdAt;
   @override
   @JsonKey(ignore: true)
