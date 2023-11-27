@@ -44,12 +44,14 @@ class UserAdd extends StatelessWidget {
                 ElevatedButton(
                     onPressed: () {
                       int n = controller.user.length + 1;
+                      if(formK.currentState!.validate()){
+
                       final userData = UserModel(
                           id: n.toString(),
                           name: nameController.text,
                           email: emailController.text,
                           createdAt: DateTime.now().toLocal());
-                      controller.addUser(userData);
+                      controller.addUser(userData);}
 
                       nameController.clear();
                       emailController.clear();
