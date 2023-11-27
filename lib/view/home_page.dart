@@ -85,10 +85,10 @@ class HomePage extends StatelessWidget {
                                     },
                                     child: Padding(
                                       padding: EdgeInsets.only(
-                                          top: ht * .01, left: wt * .05),
+                                          top: ht * .01, left: wt * .02),
                                       child: Container(
                                         height: ht * .1,
-                                        width: wt * .7,
+                                        width: wt * .75,
                                         decoration: BoxDecoration(
                                             borderRadius:
                                                 BorderRadius.circular(10)),
@@ -98,14 +98,14 @@ class HomePage extends StatelessWidget {
                                               header: 'Name',
                                               value:
                                                   controller.user[index].name,
-                                              wt: wt * .05,
+                                              wt: wt * .02,
                                             ),
                                             SizedBox(height: ht * .01),
                                             NewTxt(
                                               header: 'Email',
                                               value:
                                                   controller.user[index].email,
-                                              wt: wt * .05,
+                                              wt: wt * .02,
                                             ),
                                           ],
                                         ),
