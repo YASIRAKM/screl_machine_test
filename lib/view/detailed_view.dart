@@ -23,7 +23,7 @@ class DetailedView extends StatelessWidget {
         ),
         body: Padding(
           padding:  EdgeInsets.only(top: ht*.05,left: wt*.05,right: wt*.05),
-          child: Column(
+          child: ListView(
             children: [
               CircleAvatar(radius: wt*.15,backgroundColor: AppColor.cardColor,
                   child: const  Icon(Icons.person,size: 70,)),

@@ -1,4 +1,5 @@
 import 'package:flutter/material.dart';
+import 'package:flutter_test_user/model/user_model.dart';
 import 'package:provider/provider.dart';
 import '../utils/widget/text_widget.dart';
 import '../view_model/view_model.dart';
@@ -44,7 +45,9 @@ class HomePage extends StatelessWidget {
                     labelText: 'Search',
                     suffixIcon: InkWell(
                         onTap: () {
+
                           controller.searchUsers(searchController.text);
+
                         },
                         child: const Icon(Icons.search))),
               ),
@@ -53,7 +56,8 @@ class HomePage extends StatelessWidget {
               height: ht * .7,
               child: Consumer<UserViewModel>(
                 builder: (context, controller, child) {
-                  return controller.user.isEmpty
+                  List<UserModel> users = controller.user;
+                  return users.isEmpty
                       ? IconButton(
                           onPressed: () {
                             Navigator.push(
@@ -63,7 +67,7 @@ class HomePage extends StatelessWidget {
                           },
                           icon: const Icon(Icons.add))
                       : ListView.builder(
-                          itemCount: controller.user.length,
+                          itemCount: users.length,
                           itemBuilder: (context, index) {
                             return Card(
                               elevation: 0,
@@ -80,7 +84,7 @@ class HomePage extends StatelessWidget {
                                           MaterialPageRoute(
                                               builder: (_) => DetailedView(
                                                     user:
-                                                        controller.user[index],
+                                                        users[index],
                                                   )));
                                     },
                                     child: Padding(
@@ -97,14 +101,14 @@ class HomePage extends StatelessWidget {
                                             NewTxt(
                                               header: 'Name',
                                               value:
-                                                  controller.user[index].name,
+                                                  users[index].name,
                                               wt: wt * .02,
                                             ),
                                             SizedBox(height: ht * .01),
                                             NewTxt(
                                               header: 'Email',
                                               value:
-                                                  controller.user[index].email,
+                                                  users[index].email,
                                               wt: wt * .02,
                                             ),
                                           ],
@@ -121,10 +125,10 @@ class HomePage extends StatelessWidget {
                                               title: Column(
                                                 children: [
                                                   Text(
-                                                      "Dou yo want to delete ${controller.user[index].name}"),
+                                                      "Dou yo want to delete ${users[index].name}"),
                                                   SizedBox(height: ht*.02,),
                                                   ElevatedButton(onPressed: (){
-                                                    controller.deleteUser(controller.user[index]);
+                                                    controller.deleteUser(users[index]);
                                                   }, child: const Text("Delete"))
                                                 ],
                                               ),

@@ -7,6 +7,7 @@ class UserViewModel extends ChangeNotifier {
   List<UserModel> _user = [];
   static const String userBoxName = 'userBox';
   List<UserModel> get user => _user;
+  bool search =false;
   UserViewModel(){
     fetchData();
   }
@@ -38,7 +39,7 @@ class UserViewModel extends ChangeNotifier {
     List<UserModel> filteredUsers = _user
         .where((user) =>
             user.name.toLowerCase().contains(query.toLowerCase()) ||
-            // user.name.toUpperCase().contains(query.toUpperCase()) ||
+            user.name.toUpperCase().contains(query.toUpperCase()) ||
             user.email.toUpperCase().contains(query.toUpperCase()) ||
             user.email.toLowerCase().contains(query.toLowerCase()))
         .toList();
